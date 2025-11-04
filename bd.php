@@ -1,16 +1,18 @@
+
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "tasks_db";
 
-$host     = "localhost";
-$usuario  = "root";
-$senha    = "root";
-$banco    = "tasks_db";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-$conn = new mysqli($host, $usuario, $senha, $banco);
-
+// Check connection
 if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
+// Set charset to utf8
 $conn->set_charset("utf8");
-
-date_default_timezone_set("America/Sao_Paulo");
+?>
